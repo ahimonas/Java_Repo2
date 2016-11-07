@@ -1,0 +1,53 @@
+public class Hmk8TestClass {
+
+	public static void main(String[] args) {
+
+		Address address = new Address("360 Main St.", "Chicago", "Illinois",
+				"60507");
+		Driver driver = new Driver("Id# 11261", "Brandon Dupy", address);
+		Car car = new Car(2016, "Chevrolet", "Camero", driver);
+
+		// Driver (String licenseId, String fullName, Address A) {
+
+		// public Car (int year, String make, String model, Driver driver)
+
+		// public Address (String streetAddress, String city, String state,
+		// String zipCode) {
+
+		// car.setDriver(driver);
+		// car.setMake("Chevrolet");
+		// car.setModel("Camero");
+		// car.setYear(2016);
+
+		// driver.setAddress(address);
+		// driver.setFullName("Brandon Dupy");
+		// driver.setLicenseId(12345);
+
+		// address.setStreetAddress("360 Main St.");
+		// address.setCity("Chicago");
+		// address.setState("Illinois");
+		// address.setZipCode("60507");
+
+		StringBuilder output = new StringBuilder();
+		output.append("Car: \t");
+		output.append(car.getYear());
+		output.append(" ");
+		output.append(car.getMake());
+		output.append(" ");
+		output.append(car.getModel());
+		output.append("\n");
+		output.append("Ownded by: \t");
+		output.append(driver.getFullName());
+		output.append("\n\t\t");
+		output.append(address.getStreetAddress());
+		output.append("\n\t\t");
+		output.append(address.getCity());
+		output.append(", ");
+		output.append(address.getState());
+		output.append(" ");
+		output.append(address.getZipCode());
+
+		System.out.println(output);
+	}
+
+}

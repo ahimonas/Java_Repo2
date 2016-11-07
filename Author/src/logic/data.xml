@@ -1,0 +1,23 @@
+<node type="question">
+    <question value = "Does it hunt at night" />
+    <answer value="yes">
+      <node type="question">
+        <question value = "Can it fly?" />
+        <answer value="yes">
+          <node type="statement">
+            <statement value="This is a bird."/>
+          </node>
+        </answer>
+        <answer value="no">
+          <node type="statement">
+            <statement value="The animal is a night bat" />
+          </node>
+        </answer>
+      </node>
+    </answer>
+    <answer value="no">
+      <node type="statement">
+        <statement value="The animal is a mamal" />
+      </node>
+    </answer>
+</node>

@@ -1,0 +1,88 @@
+package insta60;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class DNA {
+
+	public static void main(String[] args) {
+		String[] protiens = new String[100];
+		String[] names = new String[100];
+		// The name of the file to open.
+		String fileName = "C:/Users/Andrew Himonas/Desktop/ruler/insta60/src/insta60/dna.txt";
+
+		// This will reference one line at a time
+		String line = null;
+
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(fileName);
+
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+			int i = 1;
+			int index = 0;
+
+			while ((line = bufferedReader.readLine()) != null) {
+
+				if (i % 2 == 0) {
+					// System.out.println("should be protien");
+					String str = line.replaceAll("-", "");
+
+					str = str.toUpperCase();
+					// System.out.println(str);
+					protiens[index] = str;
+					System.out.println(protiens[index]);
+
+				} else {
+					// System.out.println(line);
+					names[index] = line;
+				}
+				i++;
+				index++;
+			}
+
+			// Always close files.
+			bufferedReader.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		} catch (IOException ex) {
+			System.out.println("Error reading file '" + fileName + "'");
+			// Or we could just do this:
+			// ex.printStackTrace();
+		}
+
+		for (int x = 0; x < 20; x++) {
+			if (protiens[x] == null) {
+				break;
+
+			}
+			System.out.println(protiens[x]);
+		}
+		/*
+		 * // TODO Auto-generated method stub // The name of the file to open.
+		 * String fileName2 =
+		 * "C:/Users/Andrew Himonas/Desktop/ruler/insta60/src/insta60/temp.txt";
+		 * 
+		 * try { // Assume default encoding. FileWriter fileWriter = new
+		 * FileWriter(fileName2);
+		 * 
+		 * // Always wrap FileWriter in BufferedWriter. BufferedWriter
+		 * bufferedWriter = new BufferedWriter(fileWriter);
+		 * 
+		 * // Note that write() does not automatically // append a newline
+		 * character. bufferedWriter.write("Hello there,");
+		 * bufferedWriter.write(" here is some text.");
+		 * bufferedWriter.newLine(); bufferedWriter.write("We are writing");
+		 * bufferedWriter.write(" the text to the file.");
+		 * 
+		 * // Always close files. bufferedWriter.close(); } catch (IOException
+		 * ex) { System.out.println("Error writing to file '" + fileName2 +
+		 * "'"); // Or we could just do this: // ex.printStackTrace(); }
+		 */
+	}
+
+}

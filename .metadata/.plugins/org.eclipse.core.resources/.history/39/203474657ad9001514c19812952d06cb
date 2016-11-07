@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class Conversion {
+	public static void main(String[] args) {
+
+		// here I am using scanner to let the user input a value
+		Scanner myScanner = new Scanner(System.in);
+
+		// System.out.println("Input a number");
+
+		// int userInput = myScanner.nextInt();
+		int userInput = 0;
+
+		System.out.println("Input a number as a string ");
+		String number = myScanner.nextLine();
+		System.out.println(number);
+		// String text = "foo";
+
+		for (int i = 0; i < number.length(); i++) {
+			char isValid = number.charAt(0);
+			if (isValid == '0' || isValid == '1')
+				continue;
+			else
+				break;
+		}
+
+		// using if-else statements.
+		// if the user input is in fact binary - the if-else will stop after if.
+		// if the user input is not binary proceed to else.
+
+		if (isBinary(userInput)) {
+			System.out.println("The input number is binary");
+			System.out.println("The decimal format of the number is: "
+					+ getDecimalFromBinary(userInput));
+		} else {
+			System.out.println("The input number is not binary");
+		}
+	}
+
+	// my isBinary method will have an integer input.
+
+	public static boolean isBinary(int number) {
+		int copyOfInput = number;
+
+		// the condition for the while loop is the the number inputed is not
+		// equal to zero.
+		// if the remainder of the number is greater than zero then return
+		// false.
+
+		while (copyOfInput != 0) {
+			if (copyOfInput % 10 > 1) {
+				return false;
+			}
+			copyOfInput = copyOfInput / 10;
+		}
+		return true;
+
+	}
+
+	// power function . calculates a to the power b
+	public static double my_power(double a, double b) {
+		double temp = 1;
+		for (double i = 0; i < b; i++) {
+			temp = temp * a;
+		}
+		return temp;
+	}
+
+	/*
+	 * method getDecimalFromBinary calls my power method (my_power) and proceeds
+	 * to convert from binary to decimal starting from the right most number
+	 */
+
+	public static int getDecimalFromBinary(int binaryNumber) {
+
+		int decimal = 0; // to track the decimal output of binaryNumber
+		int power = 0; // to track the index of the digit thus the power we
+						// should be applying, i.e 2^0 for right most digit and
+						// so on
+
+		while (true) {
+			if (binaryNumber == 0) { // if the binary # is equal to zero we
+										// stop.
+				break;
+			} else { //
+				int tmp = binaryNumber % 10; // this is the remainder (by
+												// modulo)
+				// tmp is
+				decimal += tmp * my_power(2, power); // we are adding
+				binaryNumber = binaryNumber / 10;
+				power++;
+			}
+		}
+
+		return decimal;
+
+	}
+}

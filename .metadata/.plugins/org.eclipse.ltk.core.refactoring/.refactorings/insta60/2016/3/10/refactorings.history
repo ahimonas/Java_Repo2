@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;fileName&apos; in &apos;insta60.DNA.main(...)&apos; to &apos;fileName2&apos;&#x0D;&#x0A;- Original project: &apos;insta60&apos;&#x0D;&#x0A;- Original element: &apos;insta60.DNA.main(String[]).fileName&apos;&#x0D;&#x0A;- Renamed element: &apos;fileName&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;fileName&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;insta60{DNA.java[DNA~main~\[QString;@fileName!1517!1603!1524!1531!QString;!0!false" name="fileName2" references="true" stamp="1456960373717" version="1.0"/>
+</session>

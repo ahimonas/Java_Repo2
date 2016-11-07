@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="LinkedArrayNode" project="CS310HW3" file="/CS310HW3/src/LinkedArrayNode.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="264" width="344" x="64" y="69"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="LinkedArrays" project="CS310HW3" file="/CS310HW3/src/LinkedArrays.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="338" width="220" x="594" y="73"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="3">    
+    <bendpoint x="387" y="364"/>    
+    <bendpoint x="461" y="358"/>    
+    <bendpoint x="469" y="274"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="4" name="next">        
+        <position height="18" width="31" x="438" y="234"/>      
+      </attribute>      
+      <multiplicity id="5" minimum="0" maximum="1">        
+        <position height="16" width="23" x="442" y="249"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="6">    
+    <bendpoint x="393" y="346"/>    
+    <bendpoint x="420" y="342"/>    
+    <bendpoint x="448" y="340"/>    
+    <bendpoint x="453" y="295"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="7" name="prev">        
+        <position height="18" width="32" x="417" y="296"/>      
+      </attribute>      
+      <multiplicity id="8" minimum="0" maximum="1">        
+        <position height="16" width="23" x="422" y="313"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="9">    
+    <bendpoint x="515" y="120"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="10" name="tail">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="12">    
+    <bendpoint x="513" y="60"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="13" name="head">        
+        <position height="18" width="34" x="421" y="68"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="16" width="23" x="433" y="99"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

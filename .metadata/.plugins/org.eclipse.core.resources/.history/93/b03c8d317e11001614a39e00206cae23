@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+/**
+ * @Course: SDEV 250 ~ Java Programming I
+ * @Author Name: ThahirBasha
+ * @Assignment Name: jbasha_week10
+ * @Date: May 1, 2016
+ * @Description:
+ */
+// Imports
+
+// Begin Class Jbasha_week10
+public class Jbasha_week10 {
+
+	// Begin Main Method
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String str = "4643262531465454";
+		String mystr1;
+		String mystr2;
+		String result;
+		int x = 6; 
+		int y = 7;
+		mystr1 = String.valueOf(x); //cast to String
+		mystr2 = String.valueOf(7); //cast to String
+		result = mystr1 + mystr2;
+		System.out.println(result); //print "67" a a string 
+		int numb =Integer.parseInt(result); //cast it to an int
+		System.out.println(numb); //prints 67 as int
+		
+		// System.out.println(str.matches("^(\\d{3}-?\\d{2}-?\\d{4})$"));
+		// System.out.println(str.matches("^(\\4d{15}$"));
+
+		String name;
+		String ans;
+		String cc;
+		String expiration;
+
+		do {
+			System.out.printf("Enter Card Holder's Name: ");
+			name = sc.nextLine();
+
+			System.out.printf("Enter Credit Card Number (No dashes): ");
+			cc = sc.nextLine();
+
+			System.out.printf("Enter Credit Card Expiration Date (MM/YY): ");
+			expiration = sc.nextLine();
+
+			// VerifyCard cardCheck = new VerifyCard();
+			// System.out.printf("Card number:...valid credit card,%n" );
+
+			VerifyCard myCard = new VerifyCard(name, cc, expiration);
+
+			System.out
+					.printf("Would you like to enter a new card number?\n(Y for Yes, N to exit):");
+			ans = sc.next();
+
+		} while (ans.equalsIgnoreCase("Y"));
+	}
+
+	public static boolean isNumeric(String str) {
+		try {
+			double d = Double.parseDouble(str);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
+
+	/*
+	 * //Instantiate a new Scanner object Scanner sc = new Scanner(System.in);
+	 * 
+	 * //Declarations String name; String ans; String cc; String expiration;
+	 * 
+	 * //Ask user for input do {
+	 * System.out.printf("Enter Card Holder's Name: "); name = sc.nextLine();
+	 * 
+	 * System.out.printf("Enter Credit Card Number (No dashes): "); cc =
+	 * sc.nextLine();
+	 * 
+	 * System.out.printf("Enter Credit Card Expiration Date (MM/YY): ");
+	 * expiration = sc.nextLine();
+	 * 
+	 * //New instance of the subclass and constructor. Send input to subclass
+	 * VerifyCard cardCheck = new VerifyCard(); //<---- you need to initialize
+	 * //your credit card with the values //you prompted for //so check your
+	 * constructor //public VerifyCard(String name, String cc, String
+	 * expiration) { //you need to pass these in
+	 * 
+	 * VerifyCard myCard = new VerifyCard(name, cc, expiration);
+	 * 
+	 * 
+	 * 
+	 * System.out.printf("Card number:...valid credit card,%n" );
+	 * 
+	 * System.out.printf(
+	 * "Would you like to enter a new card number?\n(Y for Yes, N to exit):");
+	 * ans = sc.next();
+	 * 
+	 * } while (ans.equalsIgnoreCase("Y"));//End do-while loop } //End Main
+	 * Method
+	 */
+} // End Class Jbasha_week10

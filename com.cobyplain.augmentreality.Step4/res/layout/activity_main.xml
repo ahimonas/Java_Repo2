@@ -1,0 +1,882 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity2" >
+
+    <com.cobyplain.augmentreality.CameraSurfaceView
+        android:id="@+id/cameraSurfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         />
+
+    <com.cobyplain.augmentreality.DrawSurfaceView
+        android:id="@+id/drawSurfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:text="Map" 
+        android:textColor="#FFFFFF"
+		android:textSize="30sp"
+		android:background="@drawable/buttonshapee"
+		android:shadowColor="#A8A8A8"
+		android:shadowDx="0"
+		android:shadowDy="0"
+		android:shadowRadius="5"/>
+    
+     <Button
+        android:id="@+id/buttonB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_gravity="left|bottom"
+        android:text="Directory"
+        android:textColor="#FFFFFF"
+		android:textSize="30sp"
+		android:background="@drawable/buttonshapee"
+		android:shadowColor="#A8A8A8"
+		android:shadowDx="0"
+		android:shadowDy="0"
+		android:shadowRadius="5"/>
+    
+    <ScrollView
+         android:id="@+id/scrollBtich"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content">
+    
+      <LinearLayout android:id="@+id/linearLayout2" 
+          android:layout_height="wrap_content"
+  		  android:layout_width="match_parent" 
+  		  android:orientation="vertical"
+  		  android:background="@color/black">
+
+         <Button
+                android:id="@+id/button500"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Washington Monument (U.S. National Park Service)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Air Force Memorial" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adele H. Stamp Student Union Building (SSU)"
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/button31"
+                android:text= "Animal Science/Agricultural Engineering Building (ANS)"
+				android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+            
+            
+            <Button
+                android:id="@+id/button51"
+                android:text="Art-Sociology Building (ASY)"
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+
+            <Button
+                android:id="@+id/button61"        
+                android:text="Bel Air Hall (BEL)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/button72"
+        
+                android:text= "Benjamin Building (EDU)"
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+            
+             <Button
+                android:id="@+id/button82"
+                android:text="Biology-Psychology Building (BPS)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+             
+              <Button
+                android:id="@+id/button92"
+                android:text="Biosciences Research Building (BRB)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+              
+                <Button
+                android:id="@+id/button93"
+                android:text="Cambridge Community Center (CCC)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                  <Button
+                android:id="@+id/button94"
+                android:text="Campus Recreation Center (Epply)"
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                  
+                  
+                    <Button
+                android:id="@+id/button95"
+                android:text="Chemical and Nuclear Engineering Building (CHE)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                    
+                      <Button
+                android:id="@+id/button96"
+                android:text="Chemistry Building (CHM)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                      
+                       <Button
+                android:id="@+id/button97"
+                android:text="Clarice Smith Performing Arts Center (PAC)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                       
+                               <Button
+                android:id="@+id/button98"
+
+                android:text="Cole Student Activities Building (COL)"
+               android:textColor="#FFFFFF"
+android:textSize="30sp"
+
+ android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"/>
+                               
+                                      <Button
+                android:id="@+id/button99"
+
+                android:text="Computer Science Instructional Center(CSI)" 
+                android:textColor="#FFFFFF"
+android:textSize="30sp"
+
+ android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"/>
+                               
+                                  <Button
+                android:id="@+id/button100"
+
+                android:text="Computer and Space Sciences Building (CSS)"
+                android:textColor="#FFFFFF"
+android:textSize="30sp"
+
+ android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"/>
+                                  
+                                            
+               
+                                  
+                                   <Button
+                android:id="@+id/button102"
+                android:text="Ellicot Hall (ELL)"
+                android:textColor="#FFFFFF"
+android:textSize="30sp"
+
+ android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"/>
+                
+                                   
+                                    <Button
+                android:id="@+id/button103"
+
+                android:text="Engineering Annex (EAB)"
+                android:textColor="#FFFFFF"
+android:textSize="30sp"
+
+ android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"/>
+                                    
+                                      <Button
+                android:id="@+id/button104"
+                android:text="Engineering Laboratory Building (EGL)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                    
+                      <Button
+                android:id="@+id/button105"
+                android:text="Francis Scott Key Hall (KEY)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                      
+                         <Button
+                android:id="@+id/button106"
+                android:text="Geology Building (GEO)" 
+                android:textColor="#FFFFFF"
+				android:textSize="30sp"
+ 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                         
+                            <Button
+                android:id="@+id/button107"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patterson Hall (HJP)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                            
+                                <Button
+                android:id="@+id/button108"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harrison Lab - Green Houses (HAR)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                                
+                                  <Button
+                android:id="@+id/button109"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Holzapfel Hall - Horticulture (HZF)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                                  
+                                        <Button
+                android:id="@+id/button110"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hornbake Library (HBK)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                                        
+                <Button
+                android:id="@+id/button111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructional Television Facility (ITV)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button112"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="J.M. Patterson Building (JMP)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                  
+                <Button
+                android:id="@+id/button146"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jeong H. Kim Engineering Building (KEB)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button113"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jimenez Hall (JMZ)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button114"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Journalism Building (JRN)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                                    
+                <Button
+                android:id="@+id/button115"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jull Hall (JUL)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button116"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Knight Hall (KNI)" 
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button117"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LeFrak Hall (LEF)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 <Button
+                android:id="@+id/button145"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marie Mount Hall (MMH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                
+                 <Button
+                android:id="@+id/button118"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Martin Hall (EGR)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button119"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mathematics Building (MTH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="McKeldin Library (MCK)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Microbiology Building (MCB)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button122"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Morrill Hall (MOR)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                <Button
+                android:id="@+id/button123"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nyumburu Cultural Center (NCC)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                 <Button
+                android:id="@+id/button124"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Physics Building (PHY)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                <Button
+                android:id="@+id/button125"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plant Science Building (PLS)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                 <Button
+                android:id="@+id/button126"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preinkert Field House (PKT)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                <Button
+                android:id="@+id/button127"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Queen Anne's Hall (QAN)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                 <Button
+                android:id="@+id/button128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reckord Armory (ARM)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                <Button
+                android:id="@+id/button129"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ritchie Coliseum (RIT)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                  
+                <Button
+                android:id="@+id/button130"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="School of Public Health Building (SPH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                   
+                 <Button
+                android:id="@+id/button131"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shoemaker Building (SHM)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                      <Button
+                android:id="@+id/button133"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shriver Laboratory (SHR)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+
+                 <Button
+                android:id="@+id/button134"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skinner Building (SKN)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                 <Button
+                android:id="@+id/button135"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="South Campus Dining Hall (SDH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                 <Button
+                android:id="@+id/button136"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Susquehanna Hall (SQH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                 <Button
+                android:id="@+id/button137"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Symons Hall (SYM)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                 
+                 
+                    <Button
+                android:id="@+id/button138"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Taliaferro Hall (TLF)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                    
+                       <Button
+                android:id="@+id/button139"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tawes Fine Arts Building (TWS)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                       
+                       
+                          <Button
+                android:id="@+id/button140"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Turner Hall - Dairy/Visitor Center (TUR)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                          
+                               <Button
+                android:id="@+id/button141"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tydings Hall (TYD)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                               
+                               
+                                           <Button
+                android:id="@+id/button142"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Van Munching Hall (VMH)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                                           
+                  <Button
+                android:id="@+id/button143"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wind Tunnel Building (WTU)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                  
+                <Button
+                android:id="@+id/button144"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Woods Hall (WDS)"
+           		android:textColor="#FFFFFF"
+				android:textSize="30sp"
+				android:background="@drawable/buttonshape"
+				android:shadowColor="#A8A8A8"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="5"/>
+                
+                
+                
+              
+   </LinearLayout>
+</ScrollView>
+   
+     
+
+</FrameLayout>

@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+public class RectangleSort {
+
+	public static void main(String[] args) {
+
+		List<Rectangle> l = new ArrayList<Rectangle>();
+
+		l.add(new Rectangle(5, 3));
+		l.add(new Rectangle(10, 4));
+		l.add(new Rectangle(15, 2));
+		l.add(new Rectangle(3, 6));
+		l.add(new Rectangle(1, 3));
+		l.add(new Rectangle(7, 3));
+
+		List<Rectangle> list = new ArrayList<Rectangle>();
+		list.add(new Rectangle(5, 3));
+		list.add(new Rectangle(10, 4));
+		// list.add(new Empl("Crish",2000));
+		// list.add(new Empl("Tom",2400));
+		Collections.sort(list, new RectangleComparator());
+		for (int i = 0; i < list.size(); i++)
+			System.out.println(list.get(i).calculateArea() + "\t" + "NEW LIST");
+		System.out.println("Before sorting");
+		Iterator itr = l.iterator();
+
+		while (itr.hasNext()) {
+			System.out.print(((Rectangle) itr.next()).calculateArea() + "\t");
+		}
+
+		l.sort(new RectangleComparator());
+
+		System.out.println("\nAfter sorting with Comparator");
+
+		itr = l.iterator();
+
+		while (itr.hasNext()) {
+			System.out.print(((Rectangle) itr.next()).calculateArea() + "\t");
+		}
+
+	}
+
+}

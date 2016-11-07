@@ -1,0 +1,443 @@
+package com.cobyplain.augmentreality;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+/*draw surface view
+ -setoffset: deals with compass
+ -set location 
+ me - arbitarary point is set, the second the device is moved the point 
+ */
+
+public class DrawSurfaceView extends View implements OnClickListener {
+	// REALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+	// 38.887292, -77.032413
+
+	// 38.887292 , -77.032413 ENSCO!
+
+	// 38.887292 , -77.032413 FOREST SERVICE
+
+	// 38.887292 , -77.032413 FAAAAAA
+
+	// 38.887292 , -77.032413 TECH TREND
+	/*
+	 * FEMMMAAAAAAAAAAAAAAAAAA 38.887292 -77.032413
+	 */
+
+	public Point me = new Point(39.027158d, -77.122598900000, "Me");
+	// public Point me = new Point(50d, -77.000, "North Pole");
+	public Context context1;
+	public float bitmapXPosition = 0;
+	public float bitmapYPosition = 0;
+	Paint mPaint = new Paint();
+	public double OFFSET = 0d;
+	public double screenWidth, screenHeight = 0d;
+	public Bitmap[] mSpots, mBlips;
+	public Bitmap mRadar;
+	int j = 1;
+	public static double meLat = 0.0;
+	public static double meLon = 0.0;
+
+	public static boolean oneLoc = false;
+
+	// old 38.887292 , -77.032413
+	/** NEW (38.887292, -77.032413) **/
+
+	// yorkshire terrace as center used for testing at home.
+	Point center = new Point(38.887292, -77.032413, "CENTER");
+
+	// 38.887292 , -77.032413
+	// 40.560353, -105.081333
+
+	// USDA Forest Service 2150 Centre Ave, Fort Collins, CO 80526, United
+	// States fs.fed.us
+	// 40.560390, -105.081161
+
+	// Point center = new Point(38.990788, -76.936294, "Campus");
+	public static ArrayList<Point> props = new ArrayList<Point>();
+	static {
+
+		Log.e("SET 1", "AAAAAAAAAAAAAAAAAAAAAA");
+
+		props.add(new Point(39.027158d, -77.122598, "DUMMY"));
+
+		// props.add(new Point(39.506619,-77.655163, "6200 yorkshire"));
+
+		// agricultural department (MAIN) 1
+		// 40.560353, -105.081333
+
+		// CANYON LAKE RANGER DISTRICT 2 NLDG MAIN (1)
+		// 40.560325, -105.082533
+
+		props.add(new Point(38.889484, -77.035279, "Washington Monument"));
+
+		props.add(new Point(38.868516, -77.066255, "U.S.  Air Force Memorial"));
+		// props.add(new Point(38.803572, -77.215986, "PWS Electronics")); //2
+		// props.add(new Point(38.805007, -77.214794, "Acad. Fencing"));
+
+		// RAIL ROAD TRACKS
+		// 38.804643, -77.216214
+
+		// ACADEMY OF FENCING!
+		// 38.805007, -77.214794
+
+		// props.add(new Point(38.862902, -77.084456, " LA BAR & GRILL")); //4
+		// props.add(new Point(38.862902, -77.084456, "Salsa Room")); //5
+		// props.add(new Point(38.863590, -77.082241, "Bob & Eediths"));
+		// props.add(new Point(39.027158d, -77.12259890000001,
+		// "6200 yorkshire"));
+		// stamp student! 38.988049, -76.944403
+
+		// props.add(new Point(90d, 110.8000, "North Pole"));
+		// props.add(new Point(-90d, -110.8000, "South Pole"));
+		// props.add(new Point(-33.870932d, 151.8000, "East"));
+		// props.add(new Point(-33.870932d, 150.8000, "West"));
+	}
+
+	public DrawSurfaceView(Context c, Paint paint) {
+		super(c);
+	}
+
+	public DrawSurfaceView(Context context, AttributeSet set) {
+		super(context, set);
+		context1 = context;
+		mPaint.setColor(Color.RED);
+		mPaint.setTextSize(1);
+		mPaint.setStrokeWidth(DpiUtils.getPxFromDpi(getContext(), 2));
+		mPaint.setAntiAlias(true);
+
+		mRadar = BitmapFactory.decodeResource(context.getResources(),
+				R.drawable.radar);
+
+		mSpots = new Bitmap[props.size()];
+		for (int i = 0; i < mSpots.length; i++)
+			mSpots[i] = BitmapFactory.decodeResource(context.getResources(),
+					R.drawable.washmoo);
+	
+		// mSpots[2] = BitmapFactory.decodeResource(context.getResources(),
+		// R.drawable.pngok);
+
+		// mSpots[3] = BitmapFactory.decodeResource(context.getResources(),
+		// R.drawable.dote);
+
+		mPaint.setTextSize(50);
+		mBlips = new Bitmap[props.size()];
+		for (int i = 0; i < mBlips.length; i++)
+			mBlips[i] = BitmapFactory.decodeResource(context.getResources(),
+					R.drawable.blip);
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		Log.d("onSizeChanged", "in here w=" + w + " h=" + h);
+		screenWidth = (double) w;
+		screenHeight = (double) h;
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+
+		boolean messUp = true;
+		mPaint.setTextSize(30);
+		canvas.drawBitmap(mRadar, 0, 0, mPaint);
+		int radarCentreX = mRadar.getWidth() / 2;
+		int radarCentreY = mRadar.getHeight() / 2;
+		if (oneLoc == false && messUp == true) {
+			Log.e("HELLO", "SHOULD BE ONE LOC");
+			int j = 1;
+			for (int i = 1; i < mBlips.length; i++) {
+
+				Bitmap blip = mBlips[i];
+				Bitmap spot = mSpots[i];
+				Point u = props.get(i);
+				double dist = distInMetres(me, u);
+				double dist2 = distInMetres(center, u);
+
+				if (dist2 < 500000) {
+					if (blip == null || spot == null)
+						continue;
+
+					if (dist > 70)
+						dist = 70;
+
+					double angle = bearing(me.latitude, me.longitude,
+							u.latitude, u.longitude) - OFFSET;
+					double xPos, yPos;
+
+					if (angle < 0)
+						angle = (angle + 360) % 360;
+
+					xPos = Math.sin(Math.toRadians(angle)) * dist;
+					yPos = Math.sqrt(Math.pow(dist, 2) - Math.pow(xPos, 2));
+
+					if (angle > 90 && angle < 270)
+						yPos *= -1;
+
+					double posInPx = angle * (screenWidth / 90d);
+
+					int blipCentreX = blip.getWidth() / 2;
+					int blipCentreY = blip.getHeight() / 2;
+
+					xPos = xPos - blipCentreX;
+					yPos = yPos + blipCentreY;
+					canvas.drawBitmap(blip, (radarCentreX + (int) xPos),
+							(radarCentreY - (int) yPos), mPaint); // radar blip
+
+					// reuse xPos
+					int spotCentreX = spot.getWidth() / 2;
+					int spotCentreY = spot.getHeight() / 2;
+					xPos = posInPx - spotCentreX;
+
+					if (angle <= 45)
+						u.x = (float) ((screenWidth / 2) + xPos);
+
+					else if (angle >= 315)
+						u.x = (float) ((screenWidth / 2) - ((screenWidth * 4) - xPos));
+
+					else
+						u.x = (float) (float) (screenWidth * 9); // somewhere
+																	// off the
+																	// screen
+
+					// CR519009415
+					// /if (i==3)
+					mPaint.setColor(Color.RED);
+					// else if(i == 2)
+					// mPaint.setColor(Color.BLUE);
+					// else
+					// mPaint.setColor(Color.YELLOW);
+
+					u.y = (float) screenHeight / 2 + spotCentreY;
+					canvas.drawBitmap(spot, u.x, u.y - 320, mPaint); // camera
+																		// spot
+					bitmapXPosition = u.x;
+					bitmapYPosition = u.y;
+					canvas.drawText(u.description, u.x, u.y, mPaint); // text
+					// double d1= distInMetres(me, u);
+					// /double time1 = (0.000621371 * d);
+					// /String mystr1 = Double.toString(d);
+					// canvas.drawText("On Campus", 700, 100, mPaint);
+					// canvas.drawText(mystr, 700,100, mPaint);
+					// canvas.drawText("Distance (meters)", 700+(4*j), 50,
+					// mPaint);
+
+					double d1 = distInMetres(me, u);
+					double miles1 = d1 * 0.000621371;
+
+					// average walking time
+					double time1 = (miles1 / 1.1) * 60;
+
+					// la
+
+					// salsa
+					// bob ediths
+
+					// draws the miles
+					// if (i==3)
+					// mPaint.setColor(Color.RED);
+					// else
+					// mPaint.setColor(Color.YELLOW);
+
+					NumberFormat formatter = new DecimalFormat(
+							"#.#################");
+					String s = formatter.format(miles1);
+
+					String mystr1 = Double.toString(miles1);
+					canvas.drawText(s, 950, 50 + (4 * j), mPaint);
+					canvas.drawText("Distance (miles)", 950, 20 + (4 * j),
+							mPaint);
+
+					String s2 = formatter.format(time1);
+
+					// draws the time
+					String mystr3 = Double.toString(time1);
+					canvas.drawText(s2, 950, 110 + (4 * j), mPaint);
+					canvas.drawText("Approx. Time (min)", 950, 80 + (4 * j),
+							mPaint);
+					// Log.e("SET 1", "XXXXXXXXXXXXXXXXXXXXXX" + u.x);
+					// Log.e("SET 1", "XXXXXXXXXXXXXXXXXXXXXX" + u.y);
+					if (j == 1)
+						;
+					j = j + 30;
+
+				}
+			}
+		}
+		if (oneLoc == true) {
+			Log.e("ETF", "9999999999999999999999999999999999");
+			Bitmap blip = mBlips[0];
+			Bitmap spot = mSpots[0];
+			Point u = props.get(0);
+			double dist = distInMetres(me, u);
+			double dist2 = distInMetres(center, u);
+
+			if (dist > 70)
+				dist = 70; // we have set points very far away for demonstration
+
+			double angle = bearing(me.latitude, me.longitude, u.latitude,
+					u.longitude) - OFFSET;
+			Log.e("BBBBBBBBBBB", Double.toString(angle));
+			double xPos, yPos;
+
+			if (angle < 0)
+				angle = (angle + 360) % 360;
+
+			Log.e("BBBBBBBBBBB", Double.toString(angle));
+
+			xPos = Math.sin(Math.toRadians(angle)) * dist;
+
+			yPos = Math.sqrt(Math.pow(dist, 2) - Math.pow(xPos, 2));
+
+			if (angle > 90 && angle < 270)
+				yPos *= -1;
+
+			double posInPx = angle * (screenWidth / 90d);
+
+			double posInPy = angle * (screenHeight / 90d);
+
+			int blipCentreX = blip.getWidth() / 2;
+			int blipCentreY = blip.getHeight() / 2;
+
+			xPos = xPos - blipCentreX;
+			yPos = yPos + blipCentreY;
+			canvas.drawBitmap(blip, (radarCentreX + (int) xPos),
+					(radarCentreY - (int) yPos), mPaint); // radar blip
+
+			// reuse xPos
+			int spotCentreX = spot.getWidth() / 2;
+			int spotCentreY = spot.getHeight() / 2;
+			xPos = posInPx - spotCentreX;
+
+			yPos = posInPy - spotCentreY;
+			if (angle <= 45) {
+				u.x = (float) ((screenWidth / 2) + xPos);
+				u.y = (float) (screenHeight / 2 + yPos);
+			}
+
+			else if (angle >= 315) {
+				u.x = (float) ((screenWidth / 2) - ((screenWidth * 4) - xPos));
+				u.y = (float) ((screenHeight / 2) - ((screenHeight * 4) - yPos));
+			}
+
+			else
+				u.x = (float) (float) (screenWidth * 9); // somewhere off the
+															// screen
+
+			// u.y = (float)screenHeight/2 + spotCentreY;
+
+			// canvas.drawBitmap(spot, u.x, (float)screenHeight/4, mPaint);
+			// //camera spot MARKER
+			canvas.drawBitmap(spot, u.x, u.y, mPaint);
+			bitmapXPosition = u.x;
+			bitmapYPosition = u.y;
+
+			// draws the picture (Augmented points)
+			canvas.drawText(u.description, u.x,
+					((float) screenHeight / 4) + 350, mPaint); // text
+			double d = distInMetres(me, u);
+			double miles = d * 0.000621371;
+
+			// average walking time
+			double time = (miles / 1.7) * 60;
+
+			// draws the miles
+			String mystr = Double.toString(miles);
+			canvas.drawText(mystr, 700, 100, mPaint);
+			canvas.drawText("Distance (miles)", 700, 50, mPaint);
+
+			// draws the time
+			String mystr2 = Double.toString(time);
+			canvas.drawText(mystr2, 700, 200, mPaint);
+			canvas.drawText("Approx. Time (min)", 700, 150, mPaint);
+		}
+
+	}
+
+	public void setOffset(float offset) {
+		this.OFFSET = offset;
+	}
+
+	public void setMyLocation(double latitude, double longitude) {
+		me.latitude = latitude;
+		me.longitude = longitude;
+	}
+
+	protected double distInMetres(Point me, Point u) {
+
+		double lat1 = me.latitude;
+		double lng1 = me.longitude;
+
+		double lat2 = u.latitude;
+		double lng2 = u.longitude;
+
+		double earthRadius = 6371;
+		double dLat = Math.toRadians(lat2 - lat1);
+		double dLng = Math.toRadians(lng2 - lng1);
+		double sindLat = Math.sin(dLat / 2);
+		double sindLng = Math.sin(dLng / 2);
+		double a = Math.pow(sindLat, 2) + Math.pow(sindLng, 2) * Math.cos(lat1)
+				* Math.cos(lat2);
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		double dist = earthRadius * c;
+
+		return dist * 1000;
+	}
+
+	protected static double bearing(double lat1, double lon1, double lat2,
+			double lon2) {
+		double longDiff = Math.toRadians(lon2 - lon1);
+		double la1 = Math.toRadians(lat1);
+		double la2 = Math.toRadians(lat2);
+		double y = Math.sin(longDiff) * Math.cos(la2);
+		double x = Math.cos(la1) * Math.sin(la2) - Math.sin(la1)
+				* Math.cos(la2) * Math.cos(longDiff);
+
+		double result = Math.toDegrees(Math.atan2(y, x));
+		return (result + 360.0d) % 360.0d;
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		float x = event.getX();
+		float y = event.getY();
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			// Check if the x and y position of the touch is inside the bitmap
+			boolean b1 = x > bitmapXPosition && x < bitmapXPosition + 200
+					&& y > bitmapYPosition && y < bitmapYPosition + 200;
+			boolean b2 = x > bitmapXPosition && x < bitmapXPosition
+					&& y > bitmapYPosition && y < bitmapYPosition;
+			boolean b3 = x > bitmapXPosition && x < bitmapXPosition + 100
+					&& y > bitmapYPosition && y < bitmapYPosition + 100;
+			// if( x > bitmapXPosition && x < bitmapXPosition +100 && y >
+			// bitmapYPosition && y < bitmapYPosition +100 )
+			if (b1 || b2 || b3) {
+
+				Log.e("TOUCHED", "X: " + x + " Y: " + y);
+			}
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

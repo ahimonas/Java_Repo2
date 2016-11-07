@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">Campus Map</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Geo Locator</string>
+	<string name="button_send">send</string>
+		<string name="quit">quit</string>
+			<string name="really_quit">									Exit the application?</string>
+<string name="yes">yes</string>
+<string name="no">no</string>
+<color name="white">#FFFFFF</color>
+<color name="black">#000000</color>
+</resources>

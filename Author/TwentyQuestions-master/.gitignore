@@ -1,0 +1,7 @@
+.DS_Store
+.classpath
+.project
+java.policy.applet
+*.class
+.metadata
+gui.GuessingGame*

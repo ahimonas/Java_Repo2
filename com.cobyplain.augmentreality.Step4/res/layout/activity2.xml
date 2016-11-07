@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<!-- MapView layout and initial extent -->
+<com.esri.android.map.MapView
+android:id="@+id/map"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+initExtent = "-1.3296373526814876E7 3930962.41823043 -1.2807176545789773E7 4201243.7502468005">
+</com.esri.android.map.MapView>
+
+       <Button
+            android:id="@+id/button55"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Directions" 
+            android:padding="3dip"
+            android:textColor="#FFFFFF"
+			android:textSize="30sp"
+			android:background="@drawable/buttonshape"
+			android:shadowColor="#A8A8A8"
+			android:shadowDx="0"
+			android:shadowDy="0"
+			android:shadowRadius="5" />
+
+       <TextView
+           android:id="@+id/helloT12"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           />
+
+</LinearLayout>
